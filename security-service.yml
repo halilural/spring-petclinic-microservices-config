@@ -13,7 +13,7 @@ springdoc:
 spring:
   ## Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
   datasource:
-    url: jdbc:mysql://db:3361/microservice
+    url: jdbc:mysql://db:3306/microservice
     username: root
     # Using environment variable ENCRYPT_KEY=ENCRYPT_KEY
     # Getting the value with POST localhost:8888/encrypt and the password in its body
@@ -49,8 +49,6 @@ spring:
     activate:
       on-profile: docker
 
-server:
-  port: 8086
 eureka:
   client:
     serviceUrl:
