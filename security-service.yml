@@ -1,4 +1,16 @@
-﻿spring:
+﻿server:
+  port: 8086
+
+springdoc:
+  documentation:
+    apiVersion: 1.0
+    title: Security JWT Rest Api
+    description: Services related with authentication/authorization functionality
+  api-docs:
+    # Api docs path properties
+    path: /security/jwt/v2/api-docs
+
+spring:
   ## Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
   datasource:
     url: jdbc:mysql://db:3361/microservice
@@ -35,21 +47,10 @@ cache:
 spring:
   config:
     activate:
-      on-profile: default
-
-eureka:
-  instance:
-    # enable to register multiple app instances with a random server port
-    instance-id: ${spring.application.name}:${random.uuid}
-
----
-spring:
-  config:
-    activate:
       on-profile: docker
-  zipkin:
-    baseUrl: http://tracing-server:9411
 
+server:
+  port: 8086
 eureka:
   client:
     serviceUrl:
